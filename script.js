@@ -1,23 +1,33 @@
 const cont = document.querySelector('.canva-container');
-let size = 16;
-let isDrawing = true; 
+let isDrawing = true;
 
-const sizeButton = document.getElementById('size-button');
 const backColor = document.getElementById('background-color-picker');
 const drawColor = document.getElementById('drawing-color-picker');
+const clearButton = document.getElementById('clear-button');
 
-sizeButton.addEventListener('click', () => {
-    size = parseInt(prompt('Enter the size'));
-    if (size > 1 && size <= 100) {
-        clearGrid();
-        createGrid(size);
-    } else {
-        alert('Size should be between 2 and 100, inclusive');
-    }
+const slider = document.getElementById("sizeSlider");
+const output = document.getElementById("sizeValue");
+output.innerHTML = slider.value;
+
+let size = slider.value;
+
+slider.addEventListener('change', function () {
+    size = this.value;
+    clearGrid();
+    createGrid(size);
 });
 
+slider.oninput = function () {
+    output.innerHTML = this.value;
+}
+
+clearButton.addEventListener('click', () => {
+    clearGrid();
+    createGrid(size);
+})
+
 function clearGrid() {
-    cont.innerHTML = ''; 
+    cont.innerHTML = '';
 }
 
 function createGrid(size) {
@@ -26,7 +36,7 @@ function createGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const square = document.createElement('div');
         square.className = 'square';
-        square.style.backgroundColor = backColor.value; 
+        square.style.backgroundColor = backColor.value;
         cont.appendChild(square);
     }
 }

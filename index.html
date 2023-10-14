@@ -5,19 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etch a Sketch</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div class="container">
     <div class="canva-container"></div>
-    <div class="color-pick">
-    </div>
     <div class="options">
-      <button id="size-button">set size</button>
-      <input id="background-color-picker" type="color" value="#FFFFFF" />  
-      <input id="drawing-color-picker" type="color" value="#FF0000" />
+      <input type="range" min="2" max="100" value="16" class="slider" id="sizeSlider">
+      <p id="sizeValue">Value: <span style="color: rgb(120, 0, 0);">16</span></p>
+      <div class="text-container">
+        <div class="option-text">Background</div>
+        <div class="option-text">Pen</div>
+      </div>
+      <div class="color-pickers">
+        <input id="background-color-picker" type="color" value="#FFFFFF" />  
+        <input id="drawing-color-picker" type="color" value="#FF0000" />
+      </div>
+      <button id="clear-button">Clear</button>
+
     </div>
   </div>
 

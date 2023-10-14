@@ -1,4 +1,5 @@
 body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,6 +9,32 @@ body {
 }
 
 .container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#clear-button {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #babfc3;
+  padding: 11px 24px;
+  min-height: 44px;
+  min-width: 44px;
+  color: #202223;
+  background: #ffffff;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px;
+}
+
+#clear-button:hover {
+  background: #f6f6f7;
+  outline: 1px solid transparent;
 }
 
 .options {
@@ -15,14 +42,14 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  gap: 20px;
+  gap: 15px;
   flex-direction: column;
 }
 
 #size-button {
   cursor: pointer;
   padding: 16px 30px;
-  background-color: #555555; 
+  background-color: #555555;
   border: none;
   color: white;
   text-align: center;
@@ -38,10 +65,57 @@ body {
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
+.color-pickers {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.text-container {
+  width: 215px;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
 .square {
   background-color: white;
 }
 
 .changed-square {
   background-color: red;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+p {
+  margin: 0 400px 0 0;
 }
